@@ -64,6 +64,7 @@ const catalogAnimes = [
     imagen: "img/Sailor.jpg",
     descripcionDetallada:
       "Usagi Tsukino y sus amigas las Sailor Senshi defienden la Tierra usando poderes lunares.",
+    link: "https://www3.animeflv.net/anime/sailor-moon",
   },
 ];
 
