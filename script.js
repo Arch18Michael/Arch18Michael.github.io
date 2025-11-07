@@ -242,7 +242,6 @@ function performSearch() {
   });
 }
 
-//inicializacion
 document.addEventListener("DOMContentLoaded", () => {
   generateLatestAnimeGallery();
   generateCatalog();
@@ -254,8 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebarMenu = document.getElementById("sidebarMenu");
 
   if (hamburgerBtn && sidebarMenu) {
+    // --- Abrir / cerrar al presionar el botón ---
     hamburgerBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+      e.stopPropagation(); // evita que el clic se propague al documento
       sidebarMenu.classList.toggle("show");
       const icon = hamburgerBtn.querySelector(".material-symbols-outlined");
       if (icon)
@@ -267,11 +267,22 @@ document.addEventListener("DOMContentLoaded", () => {
         : "15px";
     });
 
-    // 🔥 NUEVO: cerrar barra al hacer clic fuera
+    // --- Cerrar al hacer clic fuera ---
     document.addEventListener("click", (e) => {
-      const isClickInside =
-        sidebarMenu.contains(e.target) || hamburgerBtn.contains(e.target);
-      if (!isClickInside && sidebarMenu.classList.contains("show")) {
+      const clickInsideMenu = sidebarMenu.contains(e.target);
+      const clickOnButton = hamburgerBtn.contains(e.target);
+
+      if (!clickInsideMenu && !clickOnButton && sidebarMenu.classList.contains("show")) {
+        sidebarMenu.classList.remove("show");
+        const icon = hamburgerBtn.querySelector(".material-symbols-outlined");
+        if (icon) icon.textContent = "menu";
+        hamburgerBtn.style.left = "15px";
+      }
+    });
+
+    // --- Cerrar con la tecla ESC ---
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && sidebarMenu.classList.contains("show")) {
         sidebarMenu.classList.remove("show");
         const icon = hamburgerBtn.querySelector(".material-symbols-outlined");
         if (icon) icon.textContent = "menu";
@@ -280,6 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 function abrirDetalle(id, tipo) {
   let item;
