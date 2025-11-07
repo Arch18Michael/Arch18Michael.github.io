@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>EvoTama - Noticias</title>
+
+  <meta name="description"
+    content="EvoTama: Tu portal para ver, explorar y ver donde comprar productos de tus animes favoritos. Inicia sesión y vive la experiencia otaku." />
+  <meta name="keywords"
+    content="anime, manga, tienda anime, otaku, series, Japón, AnimeWorld, musica anime, Sapo anime, Evotama" />
+  <meta name="author" content="Michael Navarro" />
+  <meta name="robots" content="index, follow" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/Evotama_logo.png" />
+</head>
+
+<body>
+  <!-- NAV principal -->
+  <nav class="navbar custom-topbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <button class="menu-toggle" id="hamburgerBtn" aria-label="Abrir menú">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img id="siteLogo" src="img/Evotama_Logo_white.png" alt="EvoTama" height="65" />
+        </a>
+      </div>
+
+      <!-- Barra de búsqueda -->
+      <form class="yt-search" id="ytSearch" role="search" aria-label="Buscar">
+        <button type="submit" class="search-btn" aria-label="Buscar">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <input id="searchInput" class="search-input" type="search" name="q" placeholder="Buscar" aria-label="Buscar" />
+        <button type="button" class="mic-btn" id="micBtn" aria-label="Buscar por voz">
+          <span class="material-symbols-outlined">mic</span>
+        </button>
+      </form>
+
+      <div class="top-actions d-flex align-items-center gap-2">
+        <a href="login.html" class="btn btn-outline-light btn-sm">Iniciar sesión</a>
+        <button id="registerBtn" class="btn btn-danger btn-sm">Registrarse</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menú lateral -->
+  <nav class="sidebar-menu" id="sidebarMenu">
+    <ul>
+      <li><a href="index.html"><span class="material-symbols-outlined">home</span>Inicio</a></li>
+      <li><a href="catalogo.html"><span class="material-symbols-outlined">collections</span>Catálogo</a></li>
+      <li><a href="musica.html"><span class="material-symbols-outlined">music_note</span>Música</a></li>
+      <li><a href="noticias.html"><span class="material-symbols-outlined">newspaper</span>Noticias</a></li>
+      <li><a href="tienda.html"><span class="material-symbols-outlined">store</span>Tienda</a></li>
+      <li><a href="contacto.html"><span class="material-symbols-outlined">mail</span>Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container my-5">
+    <h2 class="text-danger mb-4 text-center">Noticias</h2>
+    <p class="text-muted text-center">
+      Entérate de los últimos estrenos, eventos y anuncios del mundo del anime.
+    </p>
+
+    <div class="row g-4 mt-3">
+
+      <!-- Noticia 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light shadow-sm h-100">
+          <img src="img/no1.jpeg" class="card-img-top" alt="Nuevo filme de One Piece" />
+          <div class="card-body">
+            <h5 class="card-title">Ilustrador japonés expone las razones detrás del rechazo a personajes con gafas</h5>
+            <a href="https://somoskudasai.com/noticias/industria-anime-videojuegos-rechazo-personajes-con-lentes/" target="_blank" class="btn btn-danger btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light shadow-sm h-100">
+          <img src="img/no2.jpg" class="card-img-top" alt="Evento de Jujutsu Kaisen" />
+          <div class="card-body">
+            <h5 class="card-title">Studio Ghibli exige a OpenAI dejar de usar su contenido en la plataforma Sora 2</h5>
+            <a href="https://somoskudasai.com/noticias/studio-ghibli-exige-openai-frenar-uso-sora-2/" target="_blank" class="btn btn-danger btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light shadow-sm h-100">
+          <img src="img/no3.jpg" class="card-img-top" alt="Nueva temporada de Kimetsu no Yaiba" />
+          <div class="card-body">
+            <h5 class="card-title">La película de Chainsaw Man se mantiene en lo más alto del cine japonés</h5>
+            <a href="https://somoskudasai.com/noticias/industria-anime-videojuegos-rechazo-personajes-con-lentes/" target="_blank" class="btn btn-danger btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light shadow-sm h-100">
+          <img src="img/no4.jpeg" class="card-img-top" alt="Final de Attack on Titan" />
+          <div class="card-body">
+            <h5 class="card-title">La gran paradoja del anime: Más éxito, más cierres de estudios en japón</h5>
+            <a href="https://anmosugoi.com/anime-cierres-estudios-japon/" target="_blank" class="btn btn-danger btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light shadow-sm h-100">
+          <img src="img/no5.jpg" class="card-img-top" alt="Solo Leveling temporada 2" />
+          <div class="card-body">
+            <h5 class="card-title">El anime Oshi no Ko presenta su primer video promocional para su tercera temporada</h5>
+            <a href="https://somoskudasai.com/noticias/oshi-no-ko-nuevo-trailer-tercera-temporada/" target="_blank" class="btn btn-danger btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="text-center text-light bg-dark py-4">
+    <div class="container">
+      <p class="mb-0">© 2025 EvoTama — Sitio de ejemplo</p>
+    </div>
+  </footer>
+
+  <!-- MODAL DE REGISTRO -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title">Crear cuenta</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="regName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="regName" required />
+            </div>
+            <div class="mb-3">
+              <label for="regEmail" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="regEmail" required />
+            </div>
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="regPassword" required />
+            </div>
+            <button type="submit" class="btn btn-accent w-100">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Abrir modal -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const registerBtn = document.getElementById("registerBtn");
+      const registerModalEl = document.getElementById("registerModal");
+      const registerModal = new bootstrap.Modal(registerModalEl);
+
+      if (registerBtn) {
+        registerBtn.addEventListener("click", () => registerModal.show());
+      }
+
+      const registerForm = document.getElementById("registerForm");
+      if (registerForm) {
+        registerForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("¡Registro exitoso!");
+          registerModal.hide();
+          registerForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

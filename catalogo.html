@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EvoTama - Catalogo</title>
+
+    <meta
+      name="description"
+      content="EvoTama: Tu portal para ver, explorar y ver donde comprar productos de tus animes favoritos. Inicia sesión y vive la experiencia otaku."
+    />
+    <meta
+      name="keywords"
+      content="anime, manga, tienda anime, otaku, series, Japón, AnimeWorld, musica anime, Sapo anime, Evotama"
+    />
+    <meta name="author" content="Michael Navarro" />
+    <meta name="robots" content="index, follow" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/Evotama_logo.png" />
+  </head>
+
+  <body>
+    <!-- NAV principal-->
+    <nav class="navbar custom-topbar">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+          <button class="menu-toggle" id="hamburgerBtn" aria-label="Abrir menú">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img
+              id="siteLogo"
+              src="img/Evotama_Logo_white.png"
+              alt="EvoTama"
+              height="65"
+            />
+          </a>
+        </div>
+
+        <!-- Barra de búsqueda estilo YouTube -->
+        <form class="yt-search" id="ytSearch" role="search" aria-label="Buscar">
+          <button type="submit" class="search-btn" aria-label="Buscar">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <input
+            id="searchInput"
+            class="search-input"
+            type="search"
+            name="q"
+            placeholder="Buscar"
+            aria-label="Buscar"
+          />
+          <button
+            type="button"
+            class="mic-btn"
+            id="micBtn"
+            aria-label="Buscar por voz"
+          >
+            <span class="material-symbols-outlined">mic</span>
+          </button>
+        </form>
+
+        <div class="top-actions d-flex align-items-center gap-2">
+          <a href="login.html" class="btn btn-outline-light btn-sm"
+            >Iniciar sesión</a
+          >
+          <button id="registerBtn" class="btn btn-danger btn-sm">
+            Registrarse
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+      <ul>
+        <li>
+          <a href="index.html">
+            <span class="material-symbols-outlined">home</span>Inicio
+          </a>
+        </li>
+        <li>
+          <a href="catalogo.html">
+            <span class="material-symbols-outlined">collections</span>Catálogo
+          </a>
+        </li>
+        <li>
+          <a href="musica.html">
+            <span class="material-symbols-outlined">music_note</span>Música
+          </a>
+        </li>
+        <li>
+          <a href="noticias.html">
+            <span class="material-symbols-outlined">newspaper</span>Noticias
+          </a>
+        </li>
+        <li>
+          <a href="tienda.html">
+            <span class="material-symbols-outlined">store</span>Tienda
+          </a>
+        </li>
+        <li>
+          <a href="contacto.html">
+            <span class="material-symbols-outlined">mail</span>Contacto
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container my-5">
+      <h2 class="text-danger mb-4 text-center">Catálogo</h2>
+      <div id="animeCatalogo" class="row g-4"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-light bg-dark py-3">
+      <p>© 2025 EvoTama | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- MODAL DE REGISTRO (reutilizable en distintas páginas) -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title">Crear cuenta</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="regName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="regName" required />
+              </div>
+              <div class="mb-3">
+                <label for="regEmail" class="form-label"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="regEmail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="regPassword" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="regPassword"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-accent w-100">
+                Registrarse
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Detalle -->
+<div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title text-danger" id="modalTitulo"></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-flex flex-column flex-md-row align-items-center">
+        <img id="modalImagen" src="" alt="" class="img-fluid rounded me-md-3 mb-3 mb-md-0" style="max-width: 45%;">
+        <div>
+          <p id="modalDescripcion" class="mb-3"></p>
+          <div class="d-flex gap-2">
+            <button id="reproducirBtn" class="btn btn-light">
+              <span class="material-symbols-outlined align-middle">play_arrow</span>
+              Reproducir
+            </button>
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!--Abrir modal-->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Abrir modal de registro desde el botón del navbar
+        const registerBtn = document.getElementById("registerBtn");
+        const registerModalEl = document.getElementById("registerModal");
+        const registerModal = new bootstrap.Modal(registerModalEl);
+
+        if (registerBtn) {
+          registerBtn.addEventListener("click", () => registerModal.show());
+        }
+
+        // Manejo de envío del formulario (simulacion)
+        const registerForm = document.getElementById("registerForm");
+        if (registerForm) {
+          registerForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("¡Registro exitoso!");
+            registerModal.hide();
+            registerForm.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

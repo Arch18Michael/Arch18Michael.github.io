@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EvoTama - Inicio</title>
+
+    <meta
+      name="description"
+      content="EvoTama: Tu portal para ver, explorar y ver donde comprar productos de tus animes favoritos. Inicia sesión y vive la experiencia otaku."
+    />
+    <meta
+      name="keywords"
+      content="anime, manga, tienda anime, otaku, series, Japón, AnimeWorld, musica anime, Sapo anime, Evotama"
+    />
+    <meta name="author" content="Michael Navarro" />
+    <meta name="robots" content="index, follow" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/Evotama_logo.png" />
+  </head>
+
+  <body>
+    <!-- NAV principal-->
+    <nav class="navbar custom-topbar">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+          <button class="menu-toggle" id="hamburgerBtn" aria-label="Abrir menú">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img  id="siteLogo" src="img/Evotama_Logo_white.png" alt="EvoTama" height="65" />
+          </a>
+        </div>
+
+        <!-- Barra de búsqueda estilo YouTube -->
+        <form class="yt-search" id="ytSearch" role="search" aria-label="Buscar">
+          <button type="submit" class="search-btn" aria-label="Buscar">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <input
+            id="searchInput"
+            class="search-input"
+            type="search"
+            name="q"
+            placeholder="Buscar"
+            aria-label="Buscar"
+          />
+          <button
+            type="button"
+            class="mic-btn"
+            id="micBtn"
+            aria-label="Buscar por voz"
+          >
+            <span class="material-symbols-outlined">mic</span>
+          </button>
+        </form>
+
+        <div class="top-actions d-flex align-items-center gap-2">
+          <a href="login.html" class="btn btn-outline-light btn-sm"
+            >Iniciar sesión</a
+          >
+          <button id="registerBtn" class="btn btn-danger btn-sm">
+            Registrarse
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+      <ul>
+        <li>
+          <a href="index.html">
+            <span class="material-symbols-outlined">home</span>Inicio
+          </a>
+        </li>
+        <li>
+          <a href="catalogo.html">
+            <span class="material-symbols-outlined">collections</span>Catálogo
+          </a>
+        </li>
+        <li>
+          <a href="musica.html">
+            <span class="material-symbols-outlined">music_note</span>Música
+          </a>
+        </li>
+        <li>
+          <a href="noticias.html">
+            <span class="material-symbols-outlined">newspaper</span>Noticias
+          </a>
+        </li>
+        <li>
+          <a href="tienda.html">
+            <span class="material-symbols-outlined">store</span>Tienda
+          </a>
+        </li>
+        <li>
+          <a href="contacto.html">
+            <span class="material-symbols-outlined">mail</span>Contacto
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <header
+      class="banner banner-compact position-relative text-light text-center"
+    >
+      <div
+        id="heroCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="2000"
+      >
+        <div class="carousel-inner">
+          <!-- Slide 1: Catálogo (activo) -->
+          <div class="carousel-item active">
+            <video
+              class="d-block w-100 carousel-img carousel-video"
+              autoplay
+              muted
+              playsinline
+              loop
+              preload="metadata"
+            >
+              <source src="img/gachiakuta.mp4" type="video/mp4" />
+            </video>
+            <div class="overlay"></div>
+            <div class="content">
+              <h1 class="display-3 fw-bold animate-fade">
+                Explora el Catálogo
+              </h1>
+              <p class="lead">
+                Descubre tus animes favoritos y nuevas historias
+              </p>
+              <a href="catalogo.html" class="btn btn-lg btn-danger mt-3"
+                >Ir al Catálogo</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 2: Tienda -->
+          <div class="carousel-item">
+            <video
+              class="d-block w-100 carousel-img carousel-video"
+              autoplay
+              muted
+              playsinline
+              loop
+              preload="metadata"
+            >
+              <source src="img/rudo-surebrec-gachiakuta.mp4" type="video/mp4" />
+            </video>
+            <div class="overlay"></div>
+            <div class="content">
+              <h1 class="display-3 fw-bold animate-fade">Visita la Tienda</h1>
+              <p class="lead">
+                Encuentra productos exclusivos del mundo del anime
+              </p>
+              <a href="tienda.html" class="btn btn-lg btn-danger mt-3"
+                >Ir a la Tienda</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 3: Música -->
+          <div class="carousel-item">
+            <video
+              class="d-block w-100 carousel-img carousel-video"
+              autoplay
+              muted
+              playsinline
+              loop
+              preload="metadata"
+            >
+              <source src="img/frieren-hd.mp4" type="video/mp4" />
+            </video>
+            <div class="overlay"></div>
+            <div class="content">
+              <h1 class="display-3 fw-bold animate-fade">Disfruta la Música</h1>
+              <p class="lead">Escucha tus openings y endings favoritos aquí</p>
+              <a href="musica.html" class="btn btn-lg btn-danger mt-3"
+                >Ir a Música</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SECCION DE INFO (mantenida tal cual) -->
+    <section class="info-section text-center py-5">
+      <div class="container">
+        <h2 class="text-danger mb-4">Descubre más sobre EvoTama</h2>
+        <p class="mb-5 text-light1">
+          En EvoTama encontrarás noticias, reseñas, comunidad y las mejores
+          series y películas del anime. Nuestro objetivo es conectar a fans de
+          todo el mundo con el contenido que aman. Aquí podrás mantenerte al día
+          con los últimos estrenos, descubrir clásicos, y compartir opiniones
+          con otros aficionados.
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card bg-dark text-light h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-danger">Explora Catálogos</h5>
+                <p class="card-text">
+                  Busca tus animes favoritos por género, estudio o año.
+                  Encuentra recomendaciones personalizadas según tus gustos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-dark text-light h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-danger">Lee Noticias</h5>
+                <p class="card-text">
+                  Mantente informado con las últimas novedades del mundo del
+                  anime, manga y cultura japonesa, todo en un solo lugar.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-dark text-light h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-danger">Únete a la Comunidad</h5>
+                <p class="card-text">
+                  Participa en foros, comparte teorías y debate con otros
+                  fanáticos. AnimeWorld es tu espacio para expresarte
+                  libremente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VELO ANTES QUE NADIE -->
+    <section class="container my-5">
+      <h2 class="text-danger mb-4">Velo antes que nadie</h2>
+      <p class="text-light1 mb-4">
+        Disfruta de temporadas completas y descubre lo nuevo del anime cada
+        semana.
+      </p>
+
+      <div class="row g-4" id="latest-anime-gallery"></div>
+    </section>
+
+    <!-- BANNER DIVIDIDO FINAL -->
+    <section class="banner-split position-relative text-light">
+      <div class="banner-bg">
+        <img
+          src="img/Evangelion.png"
+          alt="AnimeWorld Banner"
+          class="w-100 h-100"
+        />
+        <div class="gradient-overlay"></div>
+      </div>
+
+      <div
+        class="container position-relative z-2 h-100 d-flex align-items-center"
+      >
+        <div class="row w-100 align-items-center">
+          <div class="col-md-6 col-12 banner-text px-4">
+            <h2 class="fw-bold display-5 mb-3 text-danger">
+              Explora el Mundo del Anime
+            </h2>
+            <p class="lead mb-4">
+              Sumérgete en historias épicas, emociones intensas y universos
+              inolvidables. Descubre lo mejor del anime, desde los clásicos
+              hasta los nuevos estrenos.
+            </p>
+            <a
+              href="catalogo.html"
+              class="btn btn-danger btn-lg rounded-pill shadow"
+              >Explorar Catálogo</a
+            >
+          </div>
+          <div class="col-md-6 d-none d-md-block"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-light bg-dark py-3">
+      <p>© 2025 EvoTama | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- MODAL DE REGISTRO (reutilizable en distintas páginas) -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title">Crear cuenta</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="regName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="regName" required />
+              </div>
+              <div class="mb-3">
+                <label for="regEmail" class="form-label"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="regEmail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="regPassword" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="regPassword"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-accent w-100">
+                Registrarse
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!--Abrir modal-->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+ 
+        const registerBtn = document.getElementById("registerBtn");
+        const registerModalEl = document.getElementById("registerModal");
+        const registerModal = new bootstrap.Modal(registerModalEl);
+
+        if (registerBtn) {
+          registerBtn.addEventListener("click", () => registerModal.show());
+        }
+
+        //simulacion
+        const registerForm = document.getElementById("registerForm");
+        if (registerForm) {
+          registerForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("¡Registro exitoso!");
+            registerModal.hide();
+            registerForm.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
