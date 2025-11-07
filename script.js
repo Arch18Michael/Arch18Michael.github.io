@@ -11,8 +11,7 @@ const latestAnimes = [
   { src: "img/BHA.jpg", alt: "Boku no Hero Academia", name: "BNHA" },
   { src: "img/Gachiakuta.jpg", alt: "Gachiakuta", name: "Gachiakuta" },
 ];
-
-
+ 
 const catalogAnimes = [
   {
     id: "naruto",
@@ -66,10 +65,27 @@ const catalogAnimes = [
     imagen: "img/Sailor.jpg",
     descripcionDetallada:
       "Usagi Tsukino y sus amigas las Sailor Senshi defienden la Tierra usando poderes lunares.",
-    link:"https://www3.animeflv.net/anime/sailor-moon",
   },
 ];
 
+const tiendaItems = [
+  {
+    id: "camiseta-naruto",
+    titulo: "Camiseta Naruto",
+    descripcion: "Camiseta de algodón con logo",
+    descripcionDetallada:
+      "Camiseta oficial de Naruto con estampado de alta calidad y suave textura.",
+    imagen: "img/camisetanaruto.jpg",
+  },
+  {
+    id: "poster-onepiece",
+    titulo: "Poster One Piece",
+    descripcion: "Poster tamaño A2",
+    descripcionDetallada:
+      "Poster de alta resolución de One Piece, ideal para decorar tu habitación o sala.",
+    imagen: "img/poster one piece.jpg",
+  },
+];
 
 //detalles
 function generateLatestAnimeGallery() {
@@ -123,6 +139,26 @@ function generateCatalog() {
 }
 
 
+function generateTienda() {
+  const container = document.getElementById("tiendaContenedor");
+  if (!container) return;
+  container.innerHTML = tiendaItems
+    .map(
+      (item) => `
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card h-100 bg-dark text-light shadow-sm">
+        <img src="${item.imagen}" class="card-img-top" alt="${item.titulo}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${item.titulo}</h5>
+          <p class="card-text small text-muted">${item.descripcion}</p>
+          <a href="detalle.html?id=${item.id}&tipo=tienda" class="btn btn-danger btn-sm mt-auto">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+  `
+    )
+    .join("");
+}
 
 function mostrarDetalle() {
   const container = document.getElementById("detalle-contenedor");
@@ -167,7 +203,7 @@ function setupThemeToggleButton() {
 
   function updateLogo(isLight) {
     if (!logo) return;
-    logo.src = isLight ? "img/Evotama0.png" : "img/Evotama1.png";
+    logo.src = isLight ? "img/EvoTama_logo.png" : "img/EvoTama_Logo_white.png";
   }
 
   const toggleTheme = () => {
