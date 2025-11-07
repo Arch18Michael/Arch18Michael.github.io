@@ -167,7 +167,7 @@ function setupThemeToggleButton() {
 
   function updateLogo(isLight) {
     if (!logo) return;
-    logo.src = isLight ? "img/EvoTama_logo.png" : "img/EvoTama_Logo_white.png";
+    logo.src = isLight ? "EvoTama_logo.png" : "EvoTama_Logo_white.png";
   }
 
   const toggleTheme = () => {
