@@ -1,4 +1,3 @@
-
 const latestAnimes = [
   {
     src: "img/jujutsu kaisen.jpg",
@@ -203,7 +202,7 @@ function setupThemeToggleButton() {
 
   function updateLogo(isLight) {
     if (!logo) return;
-    logo.src = isLight ? "img/EvoTama_logo.png" : "img/EvoTama_Logo_white.png";
+    logo.src = isLight ? "img/Evotama0.png" : "img/Evotama1.png";
   }
 
   const toggleTheme = () => {
@@ -267,6 +266,18 @@ document.addEventListener("DOMContentLoaded", () => {
         ? "270px"
         : "15px";
     });
+
+    // 🔥 NUEVO: cerrar barra al hacer clic fuera
+    document.addEventListener("click", (e) => {
+      const isClickInside =
+        sidebarMenu.contains(e.target) || hamburgerBtn.contains(e.target);
+      if (!isClickInside && sidebarMenu.classList.contains("show")) {
+        sidebarMenu.classList.remove("show");
+        const icon = hamburgerBtn.querySelector(".material-symbols-outlined");
+        if (icon) icon.textContent = "menu";
+        hamburgerBtn.style.left = "15px";
+      }
+    });
   }
 });
 
@@ -286,4 +297,3 @@ function abrirDetalle(id, tipo) {
   const modal = new bootstrap.Modal(modalEl);
   modal.show();
 }
-
