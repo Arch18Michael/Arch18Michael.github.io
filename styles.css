@@ -612,3 +612,31 @@ body.light-mode .text-light1 {
   color: #212529 !important; /* gris oscuro o casi negro */
 }
 
+/* === FIX PARA MENÚ LATERAL Y BOTÓN === */
+
+/* Asegura que el menú hamburguesa esté visible y encima */
+.menu-toggle {
+  position: relative;
+  z-index: 1200;
+}
+
+/* El contenedor superior no debe tapar el menú */
+.navbar.custom-topbar {
+  z-index: 1000;
+}
+
+/* Menú lateral más alto y visible */
+.sidebar-menu {
+  z-index: 1500;
+}
+
+/* Cuando el menú se muestra, que quede por encima de todo */
+.sidebar-menu.show {
+  left: 0;
+  box-shadow: 3px 0 25px rgba(0,0,0,0.6);
+}
+
+
+body {
+  overflow-x: hidden;
+}
